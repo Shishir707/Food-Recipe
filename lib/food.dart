@@ -46,7 +46,7 @@ class _FoodRecipeState extends State<FoodRecipe> {
           final food = recipes[index];
 
           return ListTile(
-            leading: const Icon(Icons.restaurant_menu_sharp),
+            leading: const Icon(Icons.fastfood_sharp),
             title: Text(
               food.title,
               style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
