@@ -1,37 +1,19 @@
-import 'package:flutter/material.dart';
+class Recipe {
+  final String title;
+  final String description;
+  final List<String> ingredients;
 
-class FoodRecipe extends StatefulWidget {
-  const FoodRecipe({super.key});
+  Recipe({
+    required this.title,
+    required this.description,
+    required this.ingredients,
+  });
 
-  @override
-  State<FoodRecipe> createState() => _FoodRecipeState();
-}
-
-class _FoodRecipeState extends State<FoodRecipe> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Food Recipe"),
-        backgroundColor: Colors.yellowAccent,
-        centerTitle: true,
-      ),
-      body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Icon(Icons.restaurant_menu_sharp),
-            title: Text(
-              "Food Name",
-              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-            ),
-            subtitle: Text(
-              "Description",
-              style: TextStyle(fontSize: 14, color: Colors.grey.shade700),
-            ),
-          );
-        },
-      ),
+  factory Recipe.fromJson(Map<String, dynamic> json) {
+    return Recipe(
+      title: json['title'],
+      description: json['description'],
+      ingredients: List<String>.from(json['ingredients']),
     );
   }
 }
