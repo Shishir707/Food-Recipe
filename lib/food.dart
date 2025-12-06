@@ -36,7 +36,10 @@ class _FoodRecipeState extends State<FoodRecipe> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Food Recipe"),
+        title: const Text(
+          "Food Recipe",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.yellowAccent,
         centerTitle: true,
       ),
